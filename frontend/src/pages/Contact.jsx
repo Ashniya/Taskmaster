@@ -360,48 +360,63 @@ const Contact = ({ isDark = false }) => {
                   </div>
 
                   {/* Social icons */}
-                  <div>
-                    <div className="flex gap-3 mb-6">
-                      {[
-                        { label: 'IG', color: '#E4405F' },
-                        { label: 'in', color: '#0A66C2' },
-                        { label: 'X', color: '#000000' },
-                        { label: 'GH', color: '#181717' }
-                      ].map((social, i) => (
-                        <button
-                          key={social.label}
-                          className="group relative w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                          style={{
-                            backgroundColor: isDark
-                              ? 'rgba(79,70,229,0.15)'
-                              : 'rgba(255,255,255,0.9)',
-                            color: isDark ? '#93C5FD' : '#4F46E5',
-                            border: isDark 
-                              ? '2px solid rgba(147,197,253,0.3)' 
-                              : '2px solid rgba(79,70,229,0.2)',
-                            animation: `fadeInUp 1.2s ease-out ${1.2 + i * 0.1}s both`,
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = social.color;
-                            e.currentTarget.style.color = '#FFFFFF';
-                            e.currentTarget.style.borderColor = social.color;
-                            e.currentTarget.style.transform = 'translateY(-8px) scale(1.1)';
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.backgroundColor = isDark
-                              ? 'rgba(79,70,229,0.15)'
-                              : 'rgba(255,255,255,0.9)';
-                            e.currentTarget.style.color = isDark ? '#93C5FD' : '#4F46E5';
-                            e.currentTarget.style.borderColor = isDark 
-                              ? 'rgba(147,197,253,0.3)' 
-                              : 'rgba(79,70,229,0.2)';
-                            e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                          }}
-                        >
-                          {social.label}
-                        </button>
-                      ))}
-                    </div>
+
+
+
+<div className="flex gap-3 mb-6">
+  {[
+    { label: 'IG', color: '#E4405F', link: 'https://www.instagram.com/task_masrer110/' },
+    // { label: 'T', color: '#0A66C2', link: 'https://linkedin.com/in/yourprofile' },
+    { label: 'X', color: '#000000', link: 'https://x.com/Task_Master110' },
+    { label: 'YT', color: '#E4405F', link: 'https://instagram.com/yourprofile' }
+   
+  ].map((social, i) => (
+    <a
+      key={social.label}
+      href={social.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative"
+      style={{ animation: `fadeInUp 1.2s ease-out ${1.2 + i * 0.1}s both` }}
+    >
+      <button
+        className="w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+        style={{
+          backgroundColor: isDark
+            ? 'rgba(79,70,229,0.15)'
+            : 'rgba(255,255,255,0.9)',
+          color: isDark ? '#93C5FD' : '#4F46E5',
+          border: isDark
+            ? '2px solid rgba(147,197,253,0.3)'
+            : '2px solid rgba(79,70,229,0.2)',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = social.color;
+          e.currentTarget.style.color = '#FFFFFF';
+          e.currentTarget.style.borderColor = social.color;
+          e.currentTarget.style.transform = 'translateY(-8px) scale(1.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = isDark
+            ? 'rgba(79,70,229,0.15)'
+            : 'rgba(255,255,255,0.9)';
+          e.currentTarget.style.color = isDark ? '#93C5FD' : '#4F46E5';
+          e.currentTarget.style.borderColor = isDark
+            ? 'rgba(147,197,253,0.3)'
+            : 'rgba(79,70,229,0.2)';
+          e.currentTarget.style.transform = 'translateY(0) scale(1)';
+        }}
+      >
+        {social.label}
+      </button>
+    </a>
+  ))}
+</div>
+
+
+
+
+<div>
 
                     {/* <h3
                       className="text-3xl md:text-4xl font-bold"

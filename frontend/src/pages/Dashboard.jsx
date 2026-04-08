@@ -31,6 +31,14 @@ const TaskCard = ({ task, priorityStyles, toggleComplete, handleDelete, togglePi
         return <span className={`flex items-center gap-1 text-[10px] font-medium px-2 py-1 rounded-full ${isDark ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-500'}`}><Calendar size={10}/> {format(dateObj, 'MMM d')}</span>;
     };
 
+    const getTimeString = (date) => {
+        if (!date) return null;
+        const dateObj = new Date(date);
+        const hasTime = dateObj.getHours() !== 0 || dateObj.getMinutes() !== 0;
+        if (!hasTime) return null;
+        return format(dateObj, 'h:mm a');
+    };
+
     return (
         <div 
             ref={setNodeRef} 
@@ -70,6 +78,11 @@ const TaskCard = ({ task, priorityStyles, toggleComplete, handleDelete, togglePi
                                 </span>
                             )}
                             {getDeadlineBadge(task.deadline)}
+                            {getTimeString(task.deadline) && (
+                                <span className={`text-[10px] font-medium px-2 py-0.5 rounded-md ${isDark ? 'bg-gray-700 border-gray-600 text-gray-300' : 'bg-gray-100 border-gray-200 text-gray-600'}`}>
+                                    {getTimeString(task.deadline)}
+                                </span>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -382,7 +395,7 @@ const Dashboard = ({ isDark }) => {
                                     <option>High</option><option>Medium</option><option>Low</option>
                                 </select>
                                 <input 
-                                    type="date" 
+                                    type="datetime-local" 
                                     className={`p-3 rounded-xl border ${isDark ? 'bg-gray-700 border-gray-600 text-white' : 'bg-gray-50 border-gray-200'}`}
                                     value={form.deadline} 
                                     onChange={e => setForm({...form, deadline: e.target.value})} 
