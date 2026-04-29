@@ -1,4 +1,10 @@
 {
+  "name": "taskpilot",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "npm install --prefix frontend && npm install --prefix backend",
+    "build": "npm run build --prefix frontend && cp -r frontend/dist dist"
+  },
   "dependencies": {
     "axios": "^1.13.2",
     "express": "^5.2.1"
