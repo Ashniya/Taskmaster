@@ -33,7 +33,7 @@ function App() {
   const GOOGLE_CLIENT_ID = "YOUR_GOOGLE_CLIENT_ID"; // TODO: Replace with valid ID
 
   return (
-    <GoogleOAuthProvider clientId="169423926872-krhoajcgnm9be9ojif9e4p9aej7ti8th.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="137298023096-vuq0un51074prlhsgu4h04l7t3q2ssmi.apps.googleusercontent.com">
     <AuthProvider>
       <Router>
         {/* Navbar visible on all pages, gets dark-mode state */}

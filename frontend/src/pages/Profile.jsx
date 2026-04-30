@@ -38,9 +38,8 @@ const Profile = ({ isDark, setIsDark }) => {
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
-                                className={`w-full p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                                    isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-gray-50 border-gray-200 text-gray-900'
-                                }`}
+                                className={`w-full p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-gray-50 border-gray-200 text-gray-900'
+                                    }`}
                             />
                         </div>
 
@@ -52,9 +51,8 @@ const Profile = ({ isDark, setIsDark }) => {
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className={`w-full p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${
-                                    isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-gray-50 border-gray-200 text-gray-900'
-                                }`}
+                                className={`w-full p-3 rounded-xl border focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors ${isDark ? 'bg-gray-700 border-gray-600 text-white placeholder-gray-400' : 'bg-gray-50 border-gray-200 text-gray-900'
+                                    }`}
                             />
                         </div>
 
